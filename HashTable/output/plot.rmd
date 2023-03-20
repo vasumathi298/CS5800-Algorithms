@@ -1,0 +1,45 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
+
+```{r}
+library(ggplot2)
+```
+```{r}
+data_30 <- read.table("histogram_30.txt", sep = ",")
+data_30
+```
+```{r}
+ggplot(data_30, aes(x = V2)) +
+  geom_histogram(binwidth = 1, colour = "black", fill = "white") +
+  geom_density(alpha = .2, fill = "#FF6666") +
+  labs(x = "Length of collisions list", y = "Number of collission list of size in x")
+```
+
+```{r}
+data_300 <- read.table("histogram_300.txt", sep = ",")
+data_300
+```
+```{r}
+ggplot(data_300, aes(x = V2)) +
+  geom_histogram(binwidth = 1, colour = "black", fill = "white") +
+  geom_density(alpha = .2, fill = "#FF6666") +
+  labs(x = "Length of collisions list", y = "Number of collission list of size in x")
+```
+
+```{r}
+data_1000 <- read.table("histogram_1000.txt", sep = ",")
+data_1000
+```
+
+```{r}
+ggplot(data_1000, aes(x = V2)) +
+  geom_histogram(binwidth = 1, colour = "black", fill = "white") +
+  geom_density(alpha = .2, fill = "#FF6666") +
+  labs(x = "Length of collisions list", y = "Number of collission list of size in x")
+```
